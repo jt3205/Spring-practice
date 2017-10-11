@@ -3,8 +3,6 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="messageBean" class="sample3.MessageBeanEn"></bean>
-	
-	<bean id="lg" class="sample7.LgTv"></bean>
-	<bean id="samsung" class="sample7.SamsungTv"></bean>
+<bean id="test" class="sample4.AbstractTest" factory-method="getInstance"/>
+
 </beans>

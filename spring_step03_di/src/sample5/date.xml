@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="hong" class="sample5.DateVO">
+		<property name="name">
+			<value>홍길동</value>
+		</property>
+		<property name="birth">
+			<value>1991-10-21</value>
+		</property>
+	</bean>
+
+	<bean id="lee" class="sample5.DateVO">
+		<property name="name">
+			<value>리순신</value>
+		</property>
+		<property name="birth">
+			<value>1992-05-15</value>
+		</property>
+	</bean>
+
+</beans>

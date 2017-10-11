@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 생성자를 통한 객체 생성 -->
+	<bean id="developer" class="sample8.Developer">
+		<constructor-arg ref="emp1"/>
+		<constructor-arg value="개발1팀(개발부)"/>
+	</bean>
+	<bean id="engineer" class="sample8.Engineer">
+		<constructor-arg ref="emp2"/>
+		<constructor-arg value="기술1팀(기술부)"/>
+	</bean>
+	
+	<bean id="emp1" class="sample8.Emp">
+		<constructor-arg value="강호동"/>
+		<constructor-arg value="1500000"/>
+	</bean>
+	<bean id="emp2" class="sample8.Emp">
+		<constructor-arg value="이순신"/>
+		<constructor-arg value="2500000"/>
+	</bean>
+
+</beans>
