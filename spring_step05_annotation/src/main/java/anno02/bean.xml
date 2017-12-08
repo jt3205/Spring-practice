@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<context:component-scan base-package="anno02"></context:component-scan>
+	<bean id="favoriteFood" class="anno02.Food" p:foodName="삽겹살" p:foodPrice="12000"/>
+	<bean id="unfavoriteFood" class="anno02.Food" p:foodName="보신탕" p:foodPrice="15000"/>
+</beans>
+<!--
+	<context:component-scan base-package="anno02"/>
+	@Component를 사용하려면 이 태그를 넣어줘야 한다.
+	 객체를 지정해주지 않아도 알아서 생성해준다. 
+	base-package는 어느 범위에있는 객체를 생성해 줄것인지를 선언한다
+	선언된 패키지 내에 있는 객체들을 다 생성해준다.
+	또한 패키지내의 클래스 위에 @Component어노테이션을 써주어야야 한다.
+-->

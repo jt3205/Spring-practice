@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 데이터 소스설정 : DriverManagerDataSource 클래스 이용 -->
+<bean id="datasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+   <!-- JDBC클래스 드라이브 설정 -->
+   <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+   
+   <!-- 데이터베이스 파일 위치 설정 -->
+   <property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:XE"/>
+   
+   <!-- Oracle 사용자 계정 -->
+   <property name="username" value="scott"/>
+   
+   <!-- Oracle 사용자 패스워드 설정 -->
+   <property name="password" value="tiger"/>
+</bean>
+
+<bean id="test" class="test01.FirstJdbcDaoImpl">
+   <property name="dataSource" ref="datasource"/>
+</bean>
+
+</beans>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="woman" class="aop02.Woman"></bean>
+	<bean id="man" class="aop02.Man"></bean>
+
+	<!-- Advice: 횡단 관심 사항 -->
+	<bean id="myAdvice" class="aop02.MyAspect"></bean>
+	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"></bean>
+	
+	<!-- Advisor=advice + pointcut : 핵 관심 사항 -->
+	<bean id="myAdvisor" class="org.springframework.aop.aspectj.AspectJExpressionPointcutAdvisor">
+		<property name="advice" ref="myAdvice"></property>
+		<property name="expression" ref="execution(public * *(..))"></property>
+	</bean>
+</beans>
+<!-- AOP : aspectj검색후 pom.xml -> aspectjrt , aspectjweaver 라이브러리 추가  
+<dependency>
+	<groupId>aspectj</groupId>
+	<artifactId>aspectjrt</artifactId>
+	<version>1.5.4</version>
+</dependency>
+
+<dependency>
+	<groupId>org.aspectj</groupId>
+	<artifactId>aspectjweaver</artifactId>
+	<version>1.8.9</version>
+</dependency>
+-->

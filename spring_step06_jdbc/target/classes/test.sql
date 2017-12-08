@@ -1,0 +1,1 @@
+select EMPLOYEE_ID as "사원번호", FIRST_NAME || ' ' || LAST_NAME as "이 름", SALARY*12 || '달러' as "연 봉"  from employees; 

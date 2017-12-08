@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.goodsMapper">  <!-- namespace:이름공간 -->
+	<select id="listGoods"  resultType="test04.GoodsEntity">
+		SELECT *
+		FROM GOODSINFO
+	</select>
+	
+	<insert id="insertGoods" parameterType="test04.GoodsEntity">
+		INSERT INTO
+		GOODSINFO(CODE, NAME, PRICE, MAKER)
+		VALUES(
+		#{code},
+		#{name},
+		#{price},
+		#{maker})
+	</insert> <!-- #{code}:getter는 소문자로 작성 -->
+
+	<select id="findsGoods"  parameterType="java.lang.String"   resultType="test04.GoodsEntity" >
+		SELECT * 
+		FROM GOODSINFO
+		WHERE CODE=#{code}
+	</select>
+	
+	<delete id="deleteGoods"  parameterType="java.lang.String">
+		DELETE 
+		FROM GOODSINFO
+		WHERE NAME=#{name} 
+	</delete>
+	
+	<update id="updateGoods" parameterType="test04.GoodsEntity">
+		UPDATE GOODSINFO SET 
+		NAME=#{name},
+		PRICE=#{price},
+		MAKER=#{maker}
+		WHERE
+		CODE=#{code}
+	</update>
+</mapper>
+
+
+
+
+
+
+
+
