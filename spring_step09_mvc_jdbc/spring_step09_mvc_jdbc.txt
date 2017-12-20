@@ -1,0 +1,77 @@
+spring_step09_mvc_jdbc   --- Dynamic Web Project
+                        dynamic web module version : 3.1
+                        context root : mvc
+                        content directory : web
+                        Generate web.xml  deployment descriptor(체크)                        
+                                프로젝트에서 오른쪽버튼  -> Configure  -> Convert Maven Project -> Finsh
+                        
+
+src
+   controller
+        UserController.java  
+   model
+        UserDao.java
+        UserService.java
+   entity     
+        User.java
+web
+   WEB-INF
+        lib
+           standard.jar
+           jstl.jar
+            
+        table_schema
+            user1.sql
+        view
+             list.jsp
+             insert.jsp
+        applicationContext.xml    --beans, context, p체크
+        mvc3-servlet.xml          --beans, context 체크      
+    index.jsp
+         
+ ========================================
+ <dependencies>
+  		<!-- Spring Web -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>4.1.7.RELEASE</version>
+		</dependency>
+		
+		<!-- Spring Web MVC -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>4.1.7.RELEASE</version>
+		</dependency>
+		
+		<!-- Spring Context -->	
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>4.1.7.RELEASE</version>
+		</dependency>
+		
+		<!-- JDBC -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		    <version>4.1.7.RELEASE</version>
+		</dependency>
+		
+  </dependencies>        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+          
