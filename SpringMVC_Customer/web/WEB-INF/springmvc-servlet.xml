@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+		
+<context:annotation-config/>
+<context:component-scan base-package="customer"/> <!-- 사용할 패키지 -->
+
+<!-- Controller에서 View로 연결 -->
+<bean id="viewResolver"  class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+	<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>      
+    <property name="prefix" value="/WEB-INF/view/"/>  
+    <property name="suffix" value=".jsp"/>  
+</bean>
+
+<!-- DB Connection, dbcp -->
+<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+	<property name="url"             value="jdbc:mysql://gmsgondr.net:3306/Y20112"/>
+	<property name="username"        value="Y20112"/>
+	<property name="password"        value="1234"/>
+</bean>
+
+<!-- myBatis 3.2.3 -->
+<bean id="" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<property name="dataSource" ref="dataSource"/>
+	<property name="configLocation" value="classpath:mybatis-config.xml"/>
+	<property name="transactionFactory">
+		<bean class="org.mybatis.spring.transaction.SpringManagedTransactionFactory"/>
+	</property>
+</bean>
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
