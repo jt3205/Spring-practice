@@ -1,31 +1,20 @@
 package model;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-import entity.User;
+import entity.UserVO;
 
-@Service("userService")
 public class UserService {
-	private UserDao userDao;
-
+	private UserDAO userDAO;
+	
 	@Autowired
-	public UserService(UserDao userDao) {
+	public UserService(UserDAO userDAO) {
 		super();
-		this.userDao = userDao;
+		this.userDAO = userDAO;
 	}
-
-	public boolean insertUser(User user) {
-		return userDao.insertUser(user);
-	}
-
-	public List<User> listUser() {
-		return userDao.listUser();
+	public boolean insertUser(UserVO user) {
+		
+		return false;
 	}
 
 }
-
-
-

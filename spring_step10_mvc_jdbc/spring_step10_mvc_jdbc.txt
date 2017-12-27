@@ -1,0 +1,33 @@
+ModelAndView를 이용하여 완성
+==================================================================
+spring_step10_mvc_jdbc   --- Dynamic Web Project
+                        dynamic web module version : 3.1
+                        context root : mvc
+                        content directory : web
+                        Generate web.xml  deployment descriptor(체크)                        
+                                프로젝트에서 오른쪽버튼  -> Configure  -> Convert Maven Project -> Finsh
+                        
+
+src
+   controller
+        UserController.java
+   model
+        UserDao.java
+        UserService.java
+   entity     
+        User.java
+web
+   WEB-INF
+        view
+             list.jsp
+             insert.jsp
+        applicationContext.xml    --beans체크
+        mvc4-servlet.xml          -- beans체크      
+    index.html
+          
+          
+          
+          
+          
+          
+          

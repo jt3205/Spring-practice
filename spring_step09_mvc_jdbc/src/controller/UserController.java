@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import entity.User;
+import entity.UserVO;
 import model.UserService;
 
 @Controller
@@ -19,30 +19,17 @@ public class UserController {
 		super();
 		this.userService = userService;
 	}
-	//추가하기(화면)------------------------------------------
+	
 	@RequestMapping("/insert.sp")
 	public String insert(Model model) {
 		return "/WEB-INF/view/insert.jsp";
 	}
-	//추가하기(비즈니스로직)-------------------------------------
-	@RequestMapping(value="/insertProc.sp",method=RequestMethod.POST)
-	public String insertProc(@ModelAttribute User user){
-		//System.out.println("이름:"+user.getName());
-		
-		if(userService.insertUser(user)==true)
+	
+	@RequestMapping(value="/insertProc.sp", method=RequestMethod.POST)
+	public String insertProc(@ModelAttribute UserVO user) {
+		if(userService.insertUser(user) == true) {
 			return "/list.sp";
-		else
-			return "/WEB-INF/view/insert.jsp";
-	}
-	//전체출력하기---------------------------------------------
-	@RequestMapping("/list.sp")
-	public String list(Model model) {
-		model.addAttribute("list", userService.listUser());
-		return "/WEB-INF/view/list.jsp";
+		}
+		return "/WEB-INF/view/insert.jsp";
 	}
 }
-
-
-
-
-

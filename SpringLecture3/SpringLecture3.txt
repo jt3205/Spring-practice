@@ -1,0 +1,40 @@
+SpringLecture3   -- Java Project  -> Configure -> Convert to Maven Project
+
+src
+   test1
+       UserDTO.java
+       UserDao.java          ---interface
+       UserDaoImpl.java   
+       UserMain1.java        --main  
+       UserMain2.java        --main
+       UserMain4.java        --main
+   test2
+       UserDTO.java
+       UserDao.java          ---interface
+       UserDaoImpl.java   
+       UserMain3.java        --main     
+       
+   bean.xml                   -- beans, p 추가       
+   tb_user.sql    
+
+
+
+===================================================
+pom.xml에 추가
+
+<!-- Context -->
+<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-context</artifactId>
+	<version>4.1.0.RELEASE</version>
+</dependency>
+
+<!-- JDBC --> 
+<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-jdbc</artifactId>
+	<version>3.2.3.RELEASE</version>
+</dependency>
+
+ 
+  

@@ -1,0 +1,31 @@
+spring_step11_mvc_mybatis   --- Dynamic Web Project
+                        dynamic web module version : 3.1
+                        context root : mvc
+                        content directory : web
+                        Generate web.xml  deployment descriptor(체크)                        
+                                프로젝트에서 오른쪽버튼  -> Configure  -> Convert Maven Project -> Finsh
+                        
+
+src
+   controller
+       UserController.java  
+   model
+        UserDao.java
+        UserService.java
+   entity     
+        User.java
+   mybatis
+        user-mapping.xml    --xml
+        mybatis-config.xml   --xml  
+web
+   WEB-INF
+        view
+             list.jsp
+             insert.jsp
+        applicationContext.xml   --beans, context, p체크
+        mvc5-servlet.xml         --beans, context 체크      
+    index.html
+          
+          
+          
+          
